@@ -1,11 +1,11 @@
 #!/bin/bash -x
-
 isPresent=1;
 randomCheck=$((RANDOM%2));
-
+WagePerHr=20
 if [ $isPresent -eq $randomCheck ];
 then
-        echo "Employee is Present";
+        empHrs=8;
 else
-        echo "Employee is Absent";
+        empHrs=0;
 fi
+salary=$(($WagePerHr * $empHrs))
