@@ -1,11 +1,12 @@
 #!/bin/bash -x
+declare -a dailyWage
 isPresentFull=1;
 isPresentHalf=2;
 WagePerHr=20
 MaxWorkDays=20
 MaxWorkHr=100
 TotalWorkhr=0
-day=1
+day=0
 function getWorkHr() {
 		local randomCheck=$1
 		local emphrs=0
@@ -19,7 +20,7 @@ function getWorkHr() {
 	esac
 	echo $empHrs
 }
-while [ $day -le $MaxWorkDays ] && [ $TotalWorkhr -lt $MaxWorkHr ]
+while [ $day -lt $MaxWorkDays ] && [ $TotalWorkhr -lt $MaxWorkHr ]
 do
         randomCheck=$((RANDOM%3));
         ((day++))
@@ -28,3 +29,4 @@ do
 	salary=$((WagePerHr * empHrs))
 done
 TotalSalary=$((WagePerHr * TotalWorkHr))
+echo dailyWages:${!dailywage[*]}
