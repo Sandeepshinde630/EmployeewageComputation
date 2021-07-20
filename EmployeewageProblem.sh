@@ -30,3 +30,4 @@ do
 done
 TotalSalary=$((WagePerHr * TotalWorkHr))
 echo dailyWages:${!dailywage[*]}
+echo day:${day[*]
